@@ -468,7 +468,7 @@ function CR_enter_trialRoutineEnd(trials) {
         }
     
     CR_key_press.stop();
-    if ((CR_key_press.keys === "h")) {
+    if ((CR_key_press.keys == "h")) {
         feedback_color = [1, -1, -1];
         CR_feedback_duration = 1;
     } else {
