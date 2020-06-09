@@ -102,6 +102,7 @@ var feedback_circle;
 var feedback_image;
 var globalClock;
 var routineTimer;
+var feedback_color;
 function experimentInit() {
   // Initialize components for Routine "Instr_CR"
   Instr_CRClock = new util.Clock();
@@ -468,7 +469,7 @@ function CR_enter_trialRoutineEnd(trials) {
     
     CR_key_press.stop();
     if ((CR_key_press.keys === "h")) {
-        feedback_color = [1, (- 1), (- 1)];
+        feedback_color = [1, -1, -1];
         CR_feedback_duration = 1;
     } else {
         feedback_color = [0.1, 0.5, 0.3];
