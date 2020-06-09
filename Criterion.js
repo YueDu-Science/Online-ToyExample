@@ -56,15 +56,15 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
+    {'name': 'media/denb.png', 'path': './media/denb.png'},
     {'name': 'media/dcnb.png', 'path': './media/dcnb.png'},
+    {'name': 'media/dbnb.png', 'path': './media/dbnb.png'},
+    {'name': 'media/dgnb.png', 'path': './media/dgnb.png'},
     {'name': 'conditions.xlsx', 'path': './conditions.xlsx'},
+    {'name': 'media/dhnb.png', 'path': './media/dhnb.png'},
     {'name': 'media/danb.png', 'path': './media/danb.png'},
     {'name': 'media/dfnb.png', 'path': './media/dfnb.png'},
-    {'name': 'media/dhnb.png', 'path': './media/dhnb.png'},
-    {'name': 'media/ddnb.png', 'path': './media/ddnb.png'},
-    {'name': 'media/dbnb.png', 'path': './media/dbnb.png'},
-    {'name': 'media/denb.png', 'path': './media/denb.png'},
-    {'name': 'media/dgnb.png', 'path': './media/dgnb.png'}
+    {'name': 'media/ddnb.png', 'path': './media/ddnb.png'}
   ]
 });
 
