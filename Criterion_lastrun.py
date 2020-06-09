@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2020.1.3),
-    on June 09, 2020, at 15:22
+    on June 09, 2020, at 15:26
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -364,7 +364,7 @@ for thisCR_trial in CR_trials:
     CR_trials.addData('CR_key_press.started', CR_key_press.tStartRefresh)
     CR_trials.addData('CR_key_press.stopped', CR_key_press.tStopRefresh)
     if CR_key_press.keys == ['h']:
-        feedback_color = [1.0,-1,-1]
+        feedback_color = [1,-1,-1]
         CR_feedback_duration = 1
     else:
         feedback_color = [0.1,0.5,0.3]
