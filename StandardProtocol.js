@@ -3344,7 +3344,6 @@ function HAND_TR_blocks_determineQuitRoutineEachFrame(trials) {
   };
 }
 
-
 function HAND_TR_blocks_determineQuitRoutineEnd(trials) {
   return function () {
     //------Ending Routine 'HAND_TR_blocks_determineQuit'-------
@@ -3361,7 +3360,6 @@ function HAND_TR_blocks_determineQuitRoutineEnd(trials) {
     return Scheduler.Event.NEXT;
   };
 }
-
 
 var num_image;
 var participant;
@@ -5548,7 +5546,6 @@ function TR_enter_trialsRoutineEachFrame(trials) {
       
       TR_circle.setAutoDraw(true);
       TR_cicle_frame.setAutoDraw(true);
-      TR_stim_image.setAutoDraw(true);
     }
 
     frameRemains = time_limit  - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
