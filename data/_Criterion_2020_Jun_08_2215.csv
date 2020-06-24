@@ -1,3 +1,0 @@
-﻿CR_trials.thisRepN,CR_trials.thisTrialN,CR_trials.thisN,CR_trials.thisIndex,Stim,CorrResp,imStim,Instr_CR_text.started,Instr_CR_text.stopped,Instr_CR_press.keys,Instr_CR_press.rt,Instr_CR_press.started,Instr_CR_press.stopped,circle_frame.started,circle_frame.stopped,stim_image.started,stim_image.stopped,CR_key_press.keys,CR_key_press.corr,CR_key_press.rt,CR_key_press.started,CR_key_press.stopped,participant,session,date,expName,psychopyVersion,frameRate,
-,,,,,,,7.264032499981113,None,h,0.9172810999443755,7.264032499981113,None,,,,,,,,,,,001,2020_Jun_08_2215,Criterion,2020.1.3,59.96548388388962,
-,,,,,,,,,,,,,8.237578299944289,None,8.237578299944289,None,['u'],0,[0.5837893999414518],8.237578299944289,None,,,,,,,

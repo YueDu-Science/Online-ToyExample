@@ -1,0 +1,5 @@
+*.txt
+*.psyexp
+*.py
+*.js
+!StandardProtocol.js
