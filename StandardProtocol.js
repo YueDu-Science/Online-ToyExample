@@ -3387,7 +3387,7 @@ function Creat_CR_old_StimSeqRoutineBegin(trials) {
         image_g.append(StimList[i]["imStim_g"]);
     }
     participant = Number.parseInt(expInfo["participant"]);
-    if ((participant === null)) {
+    if ((participant == null)) {
         stim_key_map_rnd = 0;
     } else {
         stim_key_map_rnd = (participant % n_map);
@@ -3399,7 +3399,7 @@ function Creat_CR_old_StimSeqRoutineBegin(trials) {
     }
     psychoJS.experiment.addData("stim_key_map", stim_key_map);
     remap_pairs = [[0, 1], [0, 2], [0, 3], [1, 2], [1, 3], [2, 3]];
-    if ((participant === null)) {
+    if ((participant == null)) {
         ind_pair = 0;
     } else {
         ind_pair = (participant % remap_pairs.length);
@@ -5547,6 +5547,8 @@ function TR_enter_trialsRoutineEachFrame(trials) {
       TR_circle.frameNStart = frameN;  // exact frame index
       
       TR_circle.setAutoDraw(true);
+      TR_cicle_frame.setAutoDraw(true);
+      TR_stim_image.setAutoDraw(true);
     }
 
     frameRemains = time_limit  - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
@@ -5557,17 +5559,10 @@ function TR_enter_trialsRoutineEachFrame(trials) {
     if (TR_circle.status === PsychoJS.Status.STARTED){ // only update if being drawn
       TR_circle.setSize([(0.275 + (0.2 * routineTimer.getTime())), (0.275 + (0.2 * routineTimer.getTime()))]);
       //TR_circle.setRadius(0.1375 + (0.1 * routineTimer.getTime()));
+      TR_cicle_frame.refresh();
+      TR_stim_image.refresh();
     }
     
-    // *TR_cicle_frame* updates
-    if (t >= 0.0 && TR_cicle_frame.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      TR_cicle_frame.tStart = t;  // (not accounting for frame time here)
-      TR_cicle_frame.frameNStart = frameN;  // exact frame index
-      
-      TR_cicle_frame.setAutoDraw(true);
-    }
-
     frameRemains = time_limit  - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (TR_cicle_frame.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       TR_cicle_frame.setAutoDraw(false);
