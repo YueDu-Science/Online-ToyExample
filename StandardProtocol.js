@@ -185,6 +185,8 @@ function updateInfo() {
 var Load_StimClock;
 var circle_frame_color;
 var circle_frame_opacity;
+var circle_color;
+var circle_opacity;
 var Instr_OVERALLClock;
 var Instr_Overall_text;
 var Instr_Overall_press;
@@ -340,12 +342,16 @@ var ThankYou;
 var ThankYouKey;
 var globalClock;
 var routineTimer;
+var circle_lw = 2;
+var circle_frame_lw = 5;
+
 function experimentInit() {
   // Initialize components for Routine "Load_Stim"
   Load_StimClock = new util.Clock();
   circle_frame_color = [1, 1, 1];
-  circle_frame_opacity = 0.3;
-  
+  circle_color = [1, 1, 1];
+  circle_frame_opacity = 0.5;
+  circle_opacity = 1;
   // Initialize components for Routine "Instr_OVERALL"
   Instr_OVERALLClock = new util.Clock();
   Instr_Overall_text = new visual.TextStim({
@@ -402,9 +408,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'hand_rt_circle_frame', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(circle_frame_color),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -1, interpolate: true,
+    opacity: circle_frame_opacity, depth: -1, interpolate: true,
   });
   
   HAND_RT_key_press = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -433,9 +439,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'hand_rt_circle_frame_feedback', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(circle_frame_color),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: 0, interpolate: true,
+    opacity: circle_frame_opacity, depth: 0, interpolate: true,
   });
   
   HAND_RT_hand_feedback = new visual.ImageStim({
@@ -500,7 +506,7 @@ function experimentInit() {
   // Initialize components for Routine "HAND_TR_enter_trials"
   HAND_TR_enter_trialsClock = new util.Clock();
   timing_tol_early = 0.1;
-  timing_tol_late = 0.075;
+  timing_tol_late = 0.1;
   TR_feedback_text = [];
   TR_penalty_text = [];
   
@@ -508,7 +514,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'HAND_TR_circle', units : 'height', 
     edges: 32, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color([1, 1, 1]),
+    lineWidth: circle_lw, lineColor: new util.Color(circle_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
     opacity: 1, depth: -1, interpolate: true,
   });
@@ -517,9 +523,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'hand_tr_circle_frame', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(circle_frame_color),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -2, interpolate: true,
+    opacity: circle_frame_opacity, depth: -2, interpolate: true,
   });
   
   HAND_TR_hand = new visual.ImageStim({
@@ -548,9 +554,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'hand_tr_circle_frame_feedback', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(circle_frame_color),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: 0, interpolate: true,
+    opacity: circle_frame_opacity, depth: 0, interpolate: true,
   });
   
   HAND_TR_hand_feedback = new visual.ImageStim({
@@ -588,9 +594,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'hand_tr_circle_frame_penalty', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color([(- 1), (- 1), (- 1)]),
+    lineWidth: circle_frame_lw, lineColor: new util.Color([(- 1), (- 1), (- 1)]),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 1, depth: 0, interpolate: true,
+    opacity: circle_frame_opacity, depth: 0, interpolate: true,
   });
   
   TR_penalty_page = new visual.TextStim({
@@ -648,9 +654,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'CR_circle_frame', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(circle_frame_color),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -1, interpolate: true,
+    opacity: circle_frame_opacity, depth: -1, interpolate: true,
   });
   
   CR_stim_image = new visual.ImageStim({
@@ -672,9 +678,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'CR_old_feedback_circle', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(1.0),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -1, interpolate: true,
+    opacity: circle_frame_opacity, depth: -1, interpolate: true,
   });
   
   CR_old_feedback_image = new visual.ImageStim({
@@ -734,9 +740,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'RT_circle_frame', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(circle_frame_color),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -1, interpolate: true,
+    opacity: circle_frame_opacity, depth: -1, interpolate: true,
   });
   
   RT_stim_image = new visual.ImageStim({
@@ -756,9 +762,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'RT_feedback_circle', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(1.0),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -1, interpolate: true,
+    opacity: circle_frame_opacity, depth: -1, interpolate: true,
   });
   
   RT_feedback_image = new visual.ImageStim({
@@ -797,9 +803,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'CR_circle_frame', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(circle_frame_color),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -1, interpolate: true,
+    opacity: circle_frame_opacity, depth: -1, interpolate: true,
   });
   
   CR_stim_image = new visual.ImageStim({
@@ -821,9 +827,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'CR_feedback_circle', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(1.0),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -1, interpolate: true,
+    opacity: circle_frame_opacity, depth: -1, interpolate: true,
   });
   
   CR_feedback_image = new visual.ImageStim({
@@ -883,7 +889,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'TR_circle', units : 'height', 
     edges: 32, size:[1.0, 1.0],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color([1, 1, 1]),
+    lineWidth: circle_lw, lineColor: new util.Color(circle_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
     opacity: 1, depth: -1, interpolate: true,
   });
@@ -892,9 +898,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'TR_cicle_frame', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(circle_frame_color),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: -2, interpolate: true,
+    opacity: circle_frame_opacity, depth: -2, interpolate: true,
   });
   
   TR_stim_image = new visual.ImageStim({
@@ -914,9 +920,9 @@ function experimentInit() {
     win: psychoJS.window, name: 'TR_feedback_circle', units : 'height', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color(1.0),
+    lineWidth: circle_frame_lw, lineColor: new util.Color(circle_frame_color),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
-    opacity: 0.5, depth: 0, interpolate: true,
+    opacity: circle_frame_opacity, depth: 0, interpolate: true,
   });
   
   TR_feedback_image = new visual.ImageStim({
@@ -945,7 +951,7 @@ function experimentInit() {
     win: psychoJS.window, name: 'tr_circle_frame_penalty', 
     edges: 60, size:[0.3, 0.3],
     ori: 0, pos: [0, 0],
-    lineWidth: 10, lineColor: new util.Color([(- 1), (- 1), (- 1)]),
+    lineWidth: circle_frame_lw, lineColor: new util.Color([(- 1), (- 1), (- 1)]),
     fillColor: new util.Color([(- 1), (- 1), (- 1)]),
     opacity: 1, depth: 0, interpolate: true,
   });
@@ -975,7 +981,7 @@ function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
-    depth: 0.0 
+    depth: 0.0
   });
   
   ThankYouKey = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -2822,11 +2828,14 @@ function HAND_TR_enter_trialsRoutineEachFrame(trials) {
     }
     
     if (HAND_TR_circle.status === PsychoJS.Status.STARTED){ // only update if being drawn
-      HAND_TR_circle.setSize([(0.275 + (0.2 * routineTimer.getTime())), (0.275 + (0.2 * routineTimer.getTime()))]);
+      HAND_TR_circle.setSize([(0.26 + (0.2 * routineTimer.getTime())), (0.26 + (0.2 * routineTimer.getTime()))]);
       //HAND_TR_circle.setRadius(0.1375 + (0.1 * routineTimer.getTime()));
       hand_tr_circle_frame.refresh();
       HAND_TR_hand.refresh();
       HAND_TR_stim.refresh();
+      hand_tr_circle_frame.setSize([0.3,0.3]);
+      //HAND_TR_hand.setSize([0.25, 0.25]);
+      //HAND_TR_stim.setSize([0.025, 0.025]);
     }
     
     frameRemains = time_limit  - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
@@ -5554,7 +5563,7 @@ function TR_enter_trialsRoutineEachFrame(trials) {
     }
     
     if (TR_circle.status === PsychoJS.Status.STARTED){ // only update if being drawn
-      TR_circle.setSize([(0.275 + (0.2 * routineTimer.getTime())), (0.275 + (0.2 * routineTimer.getTime()))]);
+      TR_circle.setSize([(0.26 + (0.2 * routineTimer.getTime())), (0.26 + (0.2 * routineTimer.getTime()))]);
       //TR_circle.setRadius(0.1375 + (0.1 * routineTimer.getTime()));
       TR_cicle_frame.refresh();
       TR_stim_image.refresh();
